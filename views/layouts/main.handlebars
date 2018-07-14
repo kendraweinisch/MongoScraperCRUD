@@ -1,117 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!-- Tab Title -->
-  <title>Paper Scraper</title>
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/newspaper_icon.png">
-  <!-- View Port Size -->
+  <title>Mongo Scraper</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Materialize - Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <!-- Materialize - Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/materia/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-
-  <!-- Fixed Nav Bar -->
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper grey darken-3">
-        <a href="/" class="brand-logo">
-          <i class="material-icons">loop</i> Paper Scraper</a>
-        <a href="" data-activates="mobile-demo" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="http://www.theonion.com/" target="_new">The Onion</a>
-          </li>
-          <li>
-            <a href="https://github.com/tomtom28/mongodb-web-scraper" target="_new">Github Repo</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <!-- For Mobile Nav Bar -->
-  <ul class="side-nav darken-3" id="mobile-demo">
-    <li>
-      <a href="http://www.theonion.com/" target="_new">The Onion</a>
-    </li>
-    <li>
-      <a href="https://github.com/kendraweinisch/MongoScraperCRUD" target="_new">Github Repo</a>
-    </li>
-  </ul>
-
-
-  <!-- Page Content -->
-  <main>
-
-    <!-- Site Info Container -->
-    <div class="container">
-      <ul class="collection with-header">
-        <li class="collection-header grey lighten-2">
-          <h4>
-            <b>Welcome to The Onion Paper Scraper! Prepare the tissues!</b>
-          </h4>
-        </li>
-        <li class="collection-item">This application allows you to read and comment on articles that were scraped from a "news" website.
-          <div>Click
-            <i class="material-icons">loop</i> in the navbar to re-scrape data.</div>
-        </li>
-        <li class="collection-item">
-          <div>Click
-            <i class="material-icons">language</i> to view an article.</div>
-        </li>
-        <li class="collection-item">
-          <div>Click
-            <i class="material-icons">comment</i> to add a comment.</div>
-        </li>
-        <li class="collection-item">
-          <div>Click
-            <i class="material-icons">thumbs_up_down</i> to read comments.</div>
-        </li>
-      </ul>
-    </div>
-
-
-    <!-- Render All Articles -->
-    <div class="container">
-      {{{body}}}
-    </div>
-
-  </main>
-
-
-  <!-- Footer -->
-  <footer class="page-footer grey darken-3">
-    <div class="footer-copyright">
-      <div class="container">
-        © Author cannot claim copyright. All article data was web scraped from
-        <a class="grey-text text-lighten-4" href="http://www.theonion.com/">www.theonion.com</a>
-      </div>
-    </div>
-  </footer>
-
-
-
-  <!-- Link in jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-    crossorigin="anonymous"></script>
-
-  <!-- Basic Page JavaScript for Repsonsiveness -->
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
-
+  {{{ body }}}
 </body>
 
 </html>

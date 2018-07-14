@@ -1,65 +1,44 @@
-// @author: Thomas Thompson
-// @github: tomtom28
-// @comment: Homework 18 - Web Scraper with Express, Handlebars, MongoDB and Cheerio
+// Web Scraper Homework Solution Example
+// (be sure to watch the video to see
+// how to operate the site in the browser)
+// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
+// Require our dependencies
+var express = require("express");
+var mongoose = require("mongoose");
+var exphbs = require("express-handlebars");
+var bodyParser = require("body-parser");
 
-// Node Dependencies
-const express = require('express');
-const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+// Set up our port to be either the host's designated port, or 3000
+var PORT = process.env.PORT || 3000;
 
-const logger = require('morgan'); // for debugging
+// Instantiate our Express App
+var app = express();
 
-// Initialize Express for debugging & body parsing
-const app = express();
-app.use(logger('dev'));
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
+// Require our routes
+var routes = require("./routes");
 
-// Serve Static Content
-app.use(express.static(process.cwd() + '/public'));
+// Designate our public folder as a static directory
+app.use(express.static("public"));
 
-// Express-Handlebars
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+// Connect Handlebars to our Express app
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
+// Use bodyParser in our app
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// Database Configuration with Mongoose
-// ---------------------------------------------------------------------------------------------------------------
-// Connect to localhost if not a production environment
-if(process.env.NODE_ENV == 'production'){
-  mongoose.connect('mongodb://heroku_60zpcwg0:ubn0n27pi2856flqoedo9glvh8@ds119578.mlab.com:19578/heroku_60zpcwg0');
-}
-else{
-  mongoose.connect('mongodb://localhost/news-scraper');
-  // YOU CAN IGNORE THE CONNECTION URL BELOW (LINE 41) THAT WAS JUST FOR DELETING STUFF ON A RE-DEPLOYMENT
-  //mongoose.connect('mongodb://heroku_60zpcwg0:ubn0n27pi2856flqoedo9glvh8@ds119578.mlab.com:19578/heroku_60zpcwg0');
-}
-var db = mongoose.connection;
+// Have every request go through our route middleware
+app.use(routes);
 
-// Show any Mongoose errors
-db.on('error', function(err) {
-  console.log('Mongoose Error: ', err);
-});
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Once logged in to the db through mongoose, log a success message
-db.once('open', function() {
-  console.log('Mongoose connection successful.');
-});
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
 
-// Import the Comment and Article models
-var Comment = require('./models/Comment.js');
-var Article = require('./models/Article.js');
-// ---------------------------------------------------------------------------------------------------------------
-
-// Import Routes/Controller
-var router = require('./controllers/controller.js');
-app.use('/', router);
-
-// Launch App
-var port = process.env.PORT || 3000;
-app.listen(port, function(){
-  console.log('Running on port: ' + port);
+// Listen on the port
+app.listen(PORT, function() {
+  console.log("Listening on port: " + PORT);
 });

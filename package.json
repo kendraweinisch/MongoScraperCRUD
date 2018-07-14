@@ -1,27 +1,19 @@
 {
-  "name": "mongoscrapercrud",
+  "name": "mongo_homework",
   "version": "1.0.0",
-  "description": "A `Node.js` and `MongoDB` webapp that scrapes news data from [The Onion](http://www.theonion.com/) and allows users to comment about what they have read. Users can also delete unwanted comments.",
+  "description": "",
   "main": "server.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kendraweinisch/MongoScraperCRUD.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kendraweinisch/MongoScraperCRUD/issues"
-  },
-  "homepage": "https://github.com/kendraweinisch/MongoScraperCRUD#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.1.6"
   }
 }
