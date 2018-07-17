@@ -1,10 +1,10 @@
 {
   "name": "mongo_homework",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +15,15 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mongoose": "^5.1.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kendraweinisch/MongoScraperCRUD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kendraweinisch/MongoScraperCRUD/issues"
+  },
+  "homepage": "https://github.com/kendraweinisch/MongoScraperCRUD#readme",
+  "description": ""
 }
