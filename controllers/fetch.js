@@ -14,7 +14,7 @@ module.exports = {
       .then(function(headlinedb) {
         if (headlinedb.length === 0) {
           res.json({
-            message: "No new articles today. Check back tomorrow!"
+            message: "No new articles today."
           });
         }
         else {

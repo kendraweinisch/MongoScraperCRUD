@@ -167,3 +167,10 @@ textarea {
   position: relative;
   bottom: 10px;
 }
+.container {
+  display : flex;
+  justify-content: center;
+}
+.h2 {
+  font-color: white;
+}
