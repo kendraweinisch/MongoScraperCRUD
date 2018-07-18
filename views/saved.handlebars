@@ -1,41 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">NYTimes Article Search</a>
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/saved">Saved Articles
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-danger scrape-new">SEARCH FOR NEW ARTICLES</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-danger clear">CLEAR ARTICLES</a>
-      </li>
-    </ul>
-  </div>
+<nav class="navbar navbar-black bg-black text-center container-fluid" style="background-color: black;">
+  <div class="container">
+    <a class="navbar-brand container" href="#">
+      <img src="/assets/images/nytlogo.gif" width="300" height="100" margin="0" alt="NYT logo">
+    </a>
+    <div class="container h2">
+      <h2>Mongo Scraper Article Search</h2>
+    </div>
+    <br>
+    <div class="container">
+      <a href="/saved" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Saved Articles</a>
+      <a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Search for New Articles</a>
+      <a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Clear Article Cache</a>
 </nav>
-<div class="jumbotron text-center">
-  <div class="overlay">
-  </div>
-  <div class="background-image">
-  </div>
-  <div class="caption">
-    <h1>Saved Articles</h1>
-    <p>Your Saved Articles</p>
-  </div>
-</div>
+<div class="background-image"> </div>
+
 <div class="container-fluid article-container">
   {{#each articles}}
     <div data-_id={{this._id}} class="card">
@@ -68,7 +46,7 @@
 
 <footer class="footer">
   <div class="container">
-    <p>New York Times Article Search</p>
+    <p>This project is in no way affilated with the New York Times</p>
   </div>
 </footer>
 
